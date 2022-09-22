@@ -1,1 +1,52 @@
-
+<!DOCTYPE html>
+<html>
+  <head lang="eng" dir="ltr">
+    <title>Rock-Paper-Scissors Game</title>
+    <link rel="stylesheet" href="./styles.css"/>
+  </head>
+  <body>
+    <section class="human-display">
+      <h2>👩🏽</h2>
+      <h3>Player</h3>
+      <p>Wins: 0</p>
+    </section>
+    <section class="game-board">
+      <h1>Rock, Paper, Scissors: Elements of Nature</h1>
+      <section class="game-rules">
+        <h2>Choose your game!</h2>
+        <section class="classic-rules">
+          <h3>🔥CLASSIC💧</h3>
+            <p>fire > earth</p>
+            <p>water > fire</p>
+            <p>earth > water</p>
+        </section>
+        <section class="difficult-rules">
+          <h3>🌬️CHALLENGE🌌</h3>
+            <p>fire > earth & wind</p>
+            <p>water > fire & space</p>
+            <p>earth > water & space</p>
+            <p>wind > water & earth</p>
+            <p>space > wind & fire</p>
+        </section>
+      </section>
+      <section class="select-fighter-classic hidden">
+        <h2>Choose your fighter!</h2>
+        <img class="fighter-selection" src="assets/earth.jpg" alt="plant in soil" />
+        <img class="fighter-selection" src="assets/water.jpg" alt="water drop and ripple" />
+        <img class="fighter-selection" src="assets/fire.jpg" alt="fire" />
+      </section>
+      <section class="select-fighter-challenge hidden">
+        <img class="fighter-selection" src="assets/wind.jpg" alt="clouds in sky resembling wind" />
+        <img class="fighter-selection" src="assets/space.jpg" alt="galaxy" />
+      </section>
+    </section>
+    <section class="computer-display">
+      <h2>💻</h2>
+      <h3>Computer</h3>
+      <p>Wins: 0</p>
+    </section>
+    <script src="main.js"></script>
+    <script src="player.js"></script>
+    <script src="game.js"></script>
+  </body>
+</html>
