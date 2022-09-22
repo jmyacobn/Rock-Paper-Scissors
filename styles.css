@@ -1,18 +1,41 @@
 * {
   /* border: 1px solid magenta; */
-  background: #E5E7E9;
 }
 
 body {
   display:flex;
   text-align: center;
   height: 100vh;
+  margin: 0;
+  background: #c2b280;
+  font-family: Verdana, Arial, sans-serif;
+  color: #623A2B;
 }
 
 h1 {
-  margin-top: 30px;
+  margin-top: 35px;
   margin-bottom: 0px;
   font-size: 2.5em;
+}
+
+h2 {
+  font-size: 2em;
+  margin-bottom: 0px;
+  color: #623A2B;
+}
+
+h3, .stats {
+  margin-top: 15px;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+}
+
+img {
+  height: 25vh;
+  width: 25vh;
+  border-radius: 90%;
+  border: 3px solid #623A2B;
+  margin: 40px 20px 20px 20px;
 }
 
 .game-board {
@@ -24,17 +47,31 @@ h1 {
 
 .player-display, .computer-display {
   width: 15vw;
+  background: #b1c280;
 }
 
 .game-rules {
   display: flex;
   flex-direction: column;
   height: 100vh;
-  width: 20vw;
+  width: 30vw;
   justify-content: space-evenly;
 }
 
 .classic-rules, .difficult-rules {
+  background: #8090c2;
+}
+
+.select-fighter {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 60vw;
+}
+
+.select-fighter-classic, .select-fighter-challenge {
+  display: flex;
+  justify-content: center;
 }
 
 .hidden {
