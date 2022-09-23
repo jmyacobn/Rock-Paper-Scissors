@@ -1,14 +1,12 @@
 class Player {
-  constructor(name, token, game) {
+  constructor(name, token) {
     this.name = name;
     this.token = token;
     this.wins = 0;
-    this.fighter = game;
+    this.fighter = "";
   }
 
-  takeTurn(game) {
-    var randomIndex = Math.floor(Math.random() * game.fighters.length);
-    this.fighter = game.fighters[randomIndex];
-    return this.fighter;
-  }
-}
+  takeTurn(selection) {
+    this.fighter = selection;
+  };
+};
