@@ -10,9 +10,9 @@ class Player {
     if (this.name === "Computer") {
       var randomIndex = Math.floor(Math.random() * game.fighters.length);
       game.gameBoard.push(game.fighters[randomIndex]);
-      // game.checkDraw();
-      // game.checkWin();
-      // game.clearBoard();
+      game.checkDraw();
+      game.checkWin();
+      game.resetGameBoard();
     } else {
       game.gameBoard.push(selection);
     };
