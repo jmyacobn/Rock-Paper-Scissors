@@ -1,9 +1,8 @@
 class Game {
-  constructor(gameSelection) {
+  constructor() {
     this.human = new Player("Player", "👩🏽");
     this.computer = new Player("Computer", "💻");
     this.gameBoard = [];
-    this.gameSelection = gameSelection;
     this.fighters = [];
   }
 
@@ -28,28 +27,19 @@ class Game {
 };
 
 checkWin() {
-  if () {
+  if ((this.gameBoard[0] === "fire" && this.gameBoard[1] === "earth" || this.gameBoard[1] === "wind") || (this.gameBoard[0] === "water" && this.gameBoard[1] === "fire" || this.gameBoard[1] === "space") || (this.gameBoard[0] === "earth" && this.gameBoard[1] === "water" || this.gameBoard[1] === "space") || (this.gameBoard[0] === "wind" && this.gameBoard[1] === "water" || this.gameBoard[1] === "earth") || (this.gameBoard[0] === "space" && this.gameBoard[1] === "wind" || this.gameBoard[1] === "fire")) {
     this.human.wins ++;
+    //dispaly win message in DOM
+    //use timeout
+    resetGameBoard();
+  } else {
+    this.computer.wins ++;
+    //dispaly win message in DOM
+    //use timeout
+    resetGameBoard();
   }
 }
 
-resentGameBoard () {
+resetGameBoard () {
   this.gameBoard = [];
 }
-
-// else if (humanFighter === "rock" && computerFighter === "earth" || computerFighter === "wind") || (humanFighter === "water" && computerFighter === "fire" || computerFighter === "space") || (humanFighter === "earth" && computerFighter === "water" || computerFighter === "space") || (humanFighter === "wind" && computerFighter === "water" || computerFighter === "earth") || (humanFighter === "space" && computerFighter === "wind" || computerFighter === "fire") --> human wins
-// else --> computer wins
-
-// human wins//
-//   this.gameBoard[0] === "fire" && this.gameBoard[1] === "earth" || this.gameBoard[1] === "wind"
-// }
-//   this.gameBoard[0] === "water" && this.gameBoard[1] === "fire" || this.gameBoard[1] === "space"
-// }
-//   this.gameBoard[0] === "earth" && this.gameBoard[1] === "water" || this.gameBoard[1] === "space"
-// }
-//   this.gameBoard[0] === "wind" && this.gameBoard[1] === "water" || this.gameBoard[1] === "earth"
-// }
-//   this.gameBoard[0] === "space" && this.gameBoard[1] === "wind" || this.gameBoard[1] === "fire"
-// }
-// this.human.wins ++
-//this.computer.wins ++
