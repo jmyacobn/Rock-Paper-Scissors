@@ -10,6 +10,8 @@ var deluxeFighters = document.querySelector(".select-fighter-deluxe");
 var fighterChoices = document.querySelectorAll('.fighter-selection');
 var resultsDisplay = document.querySelector('.results-display');
 var gameBoardHeader = document.querySelector('.game-board-header');
+var playerStats = document.querySelectorAll('#player-stats');
+var computerStats = document.querySelectorAll('#computer-stats');
 
 
 // ~~~~~~~ Event Listeners ~~~~~~~
@@ -22,13 +24,15 @@ for (var i = 0; i < fighterChoices.length; i++) {
 // ~~~~~~~ Functions and Event Listeners ~~~~~~~
 function startNewGame () {
   currentGame.resetGameBoard();
-  hide(gameRulesDisplay);
-  hide(selectFighterDisplay);
-  hide(deluxeFighters);
-  show(resultsDisplay);
+  gameBoardHeader.innerText = `Choose your fighter!`
+  if (currentGame.gameSelection === "classic") {
+    displayClassicFighters();
+  } else {
+    displayDeluxeFighters();
+  }
 }
 
-function displayClassicFighters(element) {
+function displayClassicFighters() {
   currentGame.selectGame("classic");
   hide(gameRulesDisplay);
   show(selectFighterDisplay);
@@ -46,11 +50,11 @@ function playGame(target) {
   currentGame.human.takeTurn(currentGame, selectedFighter);
   currentGame.computer.takeTurn(currentGame);
   displayWinner();
+  updateStats();
   setTimeout(startNewGame, 2000);
 }
 
 function displayWinner() {
-  gameBoardHeader.innerText = `Choose your fighter!`
   winner = currentGame.checkWin()
     if (winner === null) {
       gameBoardHeader.innerText = `😭 It's a draw! 😭`
@@ -59,6 +63,11 @@ function displayWinner() {
     } else {
       gameBoardHeader.innerText = `${winner.token} ${winner.name} won this round! ${winner.token}`
     }
+}
+
+function updateStats() {
+  playerStats.innerText = `Wins: ${currentGame.human.wins}`
+  computerStats.innerText = `Wins: ${currentGame.computer.wins}`
 }
 
 // ~~~~~~~ Helper Functions ~~~~~~~
