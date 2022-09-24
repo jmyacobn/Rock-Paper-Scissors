@@ -8,14 +8,15 @@ var gameRulesDisplay = document.querySelector(".game-rules");
 var selectFighterDisplay = document.querySelector(".select-fighter");
 var deluxeFighters = document.querySelector(".select-fighter-deluxe");
 var fighterChoices = document.querySelectorAll('.fighter-selection');
-var resultsDisplay = document.querySelector('.results-display')
+var resultsDisplay = document.querySelector('.results-display');
+var gameBoardHeader = document.querySelector('.game-board-header');
 
 
 // ~~~~~~~ Event Listeners ~~~~~~~
 classicRules.addEventListener("click", displayClassicFighters);
 deluxeRules.addEventListener("click", displayDeluxeFighters);
 for (var i = 0; i < fighterChoices.length; i++) {
-  fighterChoices[i].addEventListener("click", displayWinner)
+  fighterChoices[i].addEventListener("click", playGame)
 };
 
 // ~~~~~~~ Functions and Event Listeners ~~~~~~~
@@ -40,11 +41,24 @@ function displayDeluxeFighters() {
   show(deluxeFighters);
 }
 
-function displayWinner(target) {
+function playGame(target) {
   var selectedFighter = event.target.id
   currentGame.human.takeTurn(currentGame, selectedFighter);
   currentGame.computer.takeTurn(currentGame);
+  displayWinner();
   setTimeout(startNewGame, 2000);
+}
+
+function displayWinner() {
+  gameBoardHeader.innerText = `Choose your fighter!`
+  winner = currentGame.checkWin()
+    if (winner === null) {
+      gameBoardHeader.innerText = `😭 It's a draw! 😭`
+    } else if (winner === this.human) {
+      gameBoardHeader.innerText = `${winner.token} You won this round! ${winner.token}`
+    } else {
+      gameBoardHeader.innerText = `${winner.token} ${winner.name} won this round! ${winner.token}`
+    }
 }
 
 // ~~~~~~~ Helper Functions ~~~~~~~

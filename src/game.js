@@ -11,30 +11,22 @@ class Game {
     if (this.gameSelection === "classic") {
       this.fighters = ["earth", "water", "fire"]
     } else {
-      this.fighters = ["earth", "water", "fire", "wind", "space"]
-    };
-  };
-
-  checkDraw() {
-    if (this.gameBoard[0] === this.gameBoard[1]) {
-      return true;
-      //dispaly push message in DOM
-      //use timeout
-    } else {
-      return false;
+      this.fighters = ["earth", "water", "fire", "wind", "cat"]
     };
   };
 
   checkWin() {
-    if ((this.gameBoard[0] === "fire" && this.gameBoard[1] === "earth" || this.gameBoard[1] === "wind") || (this.gameBoard[0] === "water" && this.gameBoard[1] === "fire" || this.gameBoard[1] === "space") || (this.gameBoard[0] === "earth" && this.gameBoard[1] === "water" || this.gameBoard[1] === "space") || (this.gameBoard[0] === "wind" && this.gameBoard[1] === "water" || this.gameBoard[1] === "earth") || (this.gameBoard[0] === "space" && this.gameBoard[1] === "wind" || this.gameBoard[1] === "fire")) {
+    var winner;
+    if (this.gameBoard[0] === this.gameBoard[1]) {
+      winner = null;
+    } else if ((this.gameBoard[0] === "fire" && this.gameBoard[1] === "earth" || this.gameBoard[1] === "wind") || (this.gameBoard[0] === "water" && this.gameBoard[1] === "fire" || this.gameBoard[1] === "cat") || (this.gameBoard[0] === "earth" && this.gameBoard[1] === "water" || this.gameBoard[1] === "cat") || (this.gameBoard[0] === "wind" && this.gameBoard[1] === "water" || this.gameBoard[1] === "earth") || (this.gameBoard[0] === "cat" && this.gameBoard[1] === "wind" || this.gameBoard[1] === "fire")) {
+      winner = this.human;
       this.human.wins ++;
-      //dispaly win message in DOM
-      //use timeout
     } else {
+      winner = this.computer;
       this.computer.wins ++;
-      //dispaly win message in DOM
-      //use timeout
     };
+    return winner;
   };
 
   resetGameBoard () {

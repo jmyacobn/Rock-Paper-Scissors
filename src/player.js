@@ -9,11 +9,11 @@ class Player {
   takeTurn(game, selection) {
     if (this.name === "Computer") {
       var randomIndex = Math.floor(Math.random() * game.fighters.length);
+      this.fighter = game.fighters[randomIndex];
       game.gameBoard.push(game.fighters[randomIndex]);
-      game.checkDraw();
       game.checkWin();
-      game.resetGameBoard();
     } else {
+      this.fighter = selection;
       game.gameBoard.push(selection);
     };
   };

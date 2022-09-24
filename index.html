@@ -20,35 +20,37 @@
             <p>water > fire</p>
             <p>earth > water</p>
         </section>
-        <section class="difficult-rules">
-          <h3>🌬️ CHALLENGE 🌌</h3>
+        <section class="deluxe-rules">
+          <h3>🌬️ DELUXE 🌌</h3>
             <p>fire > earth & wind</p>
-            <p>water > fire & space</p>
-            <p>earth > water & space</p>
+            <p>water > fire & cat</p>
+            <p>earth > water & cat</p>
             <p>wind > water & earth</p>
-            <p>space > wind & fire</p>
+            <p>cat > wind & fire</p>
         </section>
       </section>
       <section class="select-fighter hidden">
-        <h2>Choose your fighter!</h2>
+        <h2 class="game-board-header">Choose your fighter!</h2>
         <section class="select-fighter-classic">
-          <img class="fighter-selection" src="assets/earth.jpg" alt="plant in soil" />
-          <img class="fighter-selection" src="assets/water.jpg" alt="water drop and ripple" />
-          <img class="fighter-selection" src="assets/fire.jpg" alt="fire" />
+          <img class="fighter-selection" id="earth" src="assets/earth.jpg" alt="plant in soil" />
+          <img class="fighter-selection" id="water" src="assets/water.jpg" alt="water drop and ripple" />
+          <img class="fighter-selection" id="fire" src="assets/fire.jpg" alt="fire" />
         </section>
-        <section class="select-fighter-challenge">
-          <img class="fighter-selection" src="assets/wind.jpg" alt="clouds in sky resembling wind" />
-          <img class="fighter-selection" src="assets/space.jpg" alt="galaxy" />
+        <section class="select-fighter-deluxe hidden">
+          <img class="fighter-selection" id="wind" src="assets/wind.jpg" alt="clouds in sky resembling wind" />
+          <img class="fighter-selection" id="cat" src="assets/cat.jpg" alt="orange cat" />
         </section>
       </section>
+    <section class="results-display hidden">
+    </section>
     </section>
     <section class="computer-display">
       <h2>💻</h2>
       <h3>Computer</h3>
       <p class="stats">Wins: 0</p>
     </section>
-    <script src="src/main.js"></script>
     <script src="src/player.js"></script>
     <script src="src/game.js"></script>
+    <script src="src/main.js"></script>
   </body>
 </html>
