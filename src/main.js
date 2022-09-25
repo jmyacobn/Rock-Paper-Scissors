@@ -11,8 +11,8 @@ var deluxeFighters = document.querySelector(".select-fighter-deluxe");
 var fighterChoices = document.querySelectorAll('.fighter-selection');
 var gameBoardHeader = document.querySelector('.game-board-header');
 var resultsDisplay = document.querySelector('.results-display');
-var playerStats = document.querySelectorAll('#player-stats');
-var computerStats = document.querySelectorAll('#computer-stats');
+var playerStats = document.querySelector('#player-stats');
+var computerStats = document.querySelector('#computer-stats');
 
 
 // ~~~~~~~ Event Listeners ~~~~~~~
@@ -43,8 +43,8 @@ function playGame(target) {
   displayWinner();
   hide(classicFighters);
   hide(deluxeFighters);
-  // updateStats();
-  // setTimeout(startNewGame, 2000);
+  updateStats();
+  setTimeout(startNewGame, 2000);
 }
 
 function displayWinner() {
