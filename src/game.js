@@ -4,14 +4,14 @@ class Game {
     this.computer = new Player("Computer", "💻");
     this.gameBoard = [];
     this.fighters = [];
-  }
+  };
 
   selectGame(gameSelection) {
     this.gameSelection = gameSelection;
       if (this.gameSelection === "classic") {
-        this.fighters = ["earth", "water", "fire"]
+        this.fighters = ["earth", "water", "fire"];
       } else {
-        this.fighters = ["earth", "water", "fire", "wind", "cat"]
+        this.fighters = ["earth", "water", "fire", "wind", "cat"];
       };
     };
 
