@@ -16,17 +16,15 @@ class Game {
   };
 
   checkWin() {
-    var winner;
     if (this.gameBoard[0] === this.gameBoard[1]) {
-      winner = null;
+      this.winner = null;
     } else if ((this.gameBoard[0] === "fire" && this.gameBoard[1] === "earth" || this.gameBoard[1] === "wind") || (this.gameBoard[0] === "water" && this.gameBoard[1] === "fire" || this.gameBoard[1] === "cat") || (this.gameBoard[0] === "earth" && this.gameBoard[1] === "water" || this.gameBoard[1] === "cat") || (this.gameBoard[0] === "wind" && this.gameBoard[1] === "water" || this.gameBoard[1] === "earth") || (this.gameBoard[0] === "cat" && this.gameBoard[1] === "wind" || this.gameBoard[1] === "fire")) {
-      winner = this.human;
+      this.winner = this.human;
       this.human.wins ++;
     } else {
-      winner = this.computer;
+      this.winner = this.computer;
       this.computer.wins ++;
     };
-    return winner;
   };
 
   resetGameBoard () {

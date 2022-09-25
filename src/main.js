@@ -6,10 +6,11 @@ var classicRules = document.querySelector(".classic-rules");
 var deluxeRules = document.querySelector(".deluxe-rules");
 var gameRulesDisplay = document.querySelector(".game-rules");
 var selectFighterDisplay = document.querySelector(".select-fighter");
+var classicFighters = document.querySelector(".select-fighter-classic");
 var deluxeFighters = document.querySelector(".select-fighter-deluxe");
 var fighterChoices = document.querySelectorAll('.fighter-selection');
-var resultsDisplay = document.querySelector('.results-display');
 var gameBoardHeader = document.querySelector('.game-board-header');
+var resultsDisplay = document.querySelector('.results-display');
 var playerStats = document.querySelectorAll('#player-stats');
 var computerStats = document.querySelectorAll('#computer-stats');
 
@@ -22,16 +23,6 @@ for (var i = 0; i < fighterChoices.length; i++) {
 };
 
 // ~~~~~~~ Functions and Event Listeners ~~~~~~~
-function startNewGame () {
-  currentGame.resetGameBoard();
-  gameBoardHeader.innerText = `Choose your fighter!`
-  if (currentGame.gameSelection === "classic") {
-    displayClassicFighters();
-  } else {
-    displayDeluxeFighters();
-  }
-}
-
 function displayClassicFighters() {
   currentGame.selectGame("classic");
   hide(gameRulesDisplay);
@@ -50,12 +41,14 @@ function playGame(target) {
   currentGame.human.takeTurn(currentGame, selectedFighter);
   currentGame.computer.takeTurn(currentGame);
   displayWinner();
-  updateStats();
-  setTimeout(startNewGame, 2000);
+  hide(classicFighters);
+  hide(deluxeFighters);
+  // updateStats();
+  // setTimeout(startNewGame, 2000);
 }
 
 function displayWinner() {
-  winner = currentGame.checkWin()
+  var winner = currentGame.winner
     if (winner === null) {
       gameBoardHeader.innerText = `😭 It's a draw! 😭`
     } else if (winner === this.human) {
@@ -63,11 +56,29 @@ function displayWinner() {
     } else {
       gameBoardHeader.innerText = `${winner.token} ${winner.name} won this round! ${winner.token}`
     }
+    resultsDisplay.innerHTML = "";
+    resultsDisplay.innerHTML += `
+    <img class="fighter-selection" id=${currentGame.human.fighter} src="assets/${currentGame.human.fighter}.jpg" alt = ${currentGame.human.fighter} />
+    <img class="fighter-selection" id=${currentGame.computer.fighter} src="assets/${currentGame.computer.fighter}.jpg" alt="${currentGame.computer.fighter}" />`
+    show(resultsDisplay);
 }
 
 function updateStats() {
   playerStats.innerText = `Wins: ${currentGame.human.wins}`
   computerStats.innerText = `Wins: ${currentGame.computer.wins}`
+}
+
+function startNewGame () {
+  currentGame.resetGameBoard();
+  gameBoardHeader.innerText = `Choose your fighter!`
+  if (currentGame.gameSelection === "classic") {
+    show(classicFighters);
+    hide(resultsDisplay);
+  } else {
+    show(classicFighters);
+    show(deluxeFighters);
+    hide(resultsDisplay);
+  }
 }
 
 // ~~~~~~~ Helper Functions ~~~~~~~
