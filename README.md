@@ -14,7 +14,7 @@
 You can play Rock, Paper, Scissors: Elements of Nature [here]().
 
 ### Context:
-This project was completed during our fifth week at Turing. It was our final solo project for Mod 1. We were given a full week to complete this project. The spec for this project can be found [here](https://frontend.turing.edu/projects/module-1/rock-paper-scissors-solo-v2.html).
+Rock-Paper-Scissors was completed during our fifth week at Turing and served as the final solo showcase for Mod 1. We were given a full week to complete this project while balancing classes, professional development, other assignments, and our final assessment. The spec for this project can be found [here](https://frontend.turing.edu/projects/module-1/rock-paper-scissors-solo-v2.html).
 
 ### Contributors:
 Jennifer Yacoubian ([GitHub](https://github.com/jmyacobn), [LinkedIn](https://www.linkedin.com/in/jennifer-yacoubian/))
