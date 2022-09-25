@@ -8,12 +8,12 @@ class Game {
 
   selectGame(gameSelection) {
     this.gameSelection = gameSelection;
-    if (this.gameSelection === "classic") {
-      this.fighters = ["earth", "water", "fire"]
-    } else {
-      this.fighters = ["earth", "water", "fire", "wind", "cat"]
+      if (this.gameSelection === "classic") {
+        this.fighters = ["earth", "water", "fire"]
+      } else {
+        this.fighters = ["earth", "water", "fire", "wind", "cat"]
+      };
     };
-  };
 
   checkWin() {
     if (this.gameBoard[0] === this.gameBoard[1]) {

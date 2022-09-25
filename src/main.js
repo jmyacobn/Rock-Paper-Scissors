@@ -13,7 +13,7 @@ var gameBoardHeader = document.querySelector('.game-board-header');
 var resultsDisplay = document.querySelector('.results-display');
 var playerStats = document.querySelector('#player-stats');
 var computerStats = document.querySelector('#computer-stats');
-
+var changeGameButton = document.querySelector('.change-game');
 
 // ~~~~~~~ Event Listeners ~~~~~~~
 classicRules.addEventListener("click", displayClassicFighters);
@@ -21,8 +21,16 @@ deluxeRules.addEventListener("click", displayDeluxeFighters);
 for (var i = 0; i < fighterChoices.length; i++) {
   fighterChoices[i].addEventListener("click", playGame)
 };
+changeGameButton.addEventListener("click", chooseGameType)
 
 // ~~~~~~~ Functions and Event Listeners ~~~~~~~
+function chooseGameType() {
+  show(gameRulesDisplay);
+  hide(selectFighterDisplay);
+  hide(deluxeFighters);
+  hide(changeGameButton);
+}
+
 function displayClassicFighters() {
   currentGame.selectGame("classic");
   hide(gameRulesDisplay);
@@ -44,7 +52,7 @@ function playGame(target) {
   hide(classicFighters);
   hide(deluxeFighters);
   updateStats();
-  // setTimeout(startNewGame, 2000);
+  setTimeout(startNewGame, 2000);
 }
 
 function displayWinner() {
@@ -58,9 +66,10 @@ function displayWinner() {
     }
     resultsDisplay.innerHTML = "";
     resultsDisplay.innerHTML += `
-    <img class="fighter-selection" id=${currentGame.human.fighter} src="assets/${currentGame.human.fighter}.jpg" alt = ${currentGame.human.fighter} />
-    <img class="fighter-selection" id=${currentGame.computer.fighter} src="assets/${currentGame.computer.fighter}.jpg" alt="${currentGame.computer.fighter}" />`
+      <img class="fighter-selection" id=${currentGame.human.fighter} src="assets/${currentGame.human.fighter}.jpg" alt = ${currentGame.human.fighter} />
+      <img class="fighter-selection" id=${currentGame.computer.fighter} src="assets/${currentGame.computer.fighter}.jpg" alt="${currentGame.computer.fighter}" />`
     show(resultsDisplay);
+    show(changeGameButton);
 }
 
 function updateStats() {
@@ -71,14 +80,14 @@ function updateStats() {
 function startNewGame () {
   currentGame.resetGameBoard();
   gameBoardHeader.innerText = `Choose your fighter!`
-  if (currentGame.gameSelection === "classic") {
-    show(classicFighters);
-    hide(resultsDisplay);
-  } else {
-    show(classicFighters);
-    show(deluxeFighters);
-    hide(resultsDisplay);
-  }
+    if (currentGame.gameSelection === "classic") {
+      show(classicFighters);
+      hide(resultsDisplay);
+    } else {
+      show(classicFighters);
+      show(deluxeFighters);
+      hide(resultsDisplay);
+    }
 }
 
 // ~~~~~~~ Helper Functions ~~~~~~~
