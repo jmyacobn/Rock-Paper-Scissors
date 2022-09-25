@@ -1,5 +1,5 @@
-* {
-  /* border: 1px solid magenta; */
+*{
+  border: 1px solid magenta;
 }
 
 body {
@@ -58,7 +58,7 @@ img {
   justify-content: space-evenly;
 }
 
-.classic-rules, .difficult-rules {
+.classic-rules, .deluxe-rules {
   background: #8090c2;
 }
 
@@ -69,9 +69,20 @@ img {
   width: 60vw;
 }
 
-.select-fighter-classic, .select-fighter-challenge {
+.select-fighter-classic, .select-fighter-deluxe, {
   display: flex;
   justify-content: center;
+}
+
+img:hover {
+  height: 30vh;
+  width: 30vh;
+  cursor: pointer;
+}
+
+.classic-rules:hover, .deluxe-rules:hover {
+  background: #c2cae2;
+  cursor: pointer;
 }
 
 .hidden {
