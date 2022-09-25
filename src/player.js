@@ -4,7 +4,7 @@ class Player {
     this.token = token;
     this.wins = 0;
     this.fighter = "";
-  }
+  };
 
   takeTurn(game, selection) {
     if (this.name === "Computer") {
