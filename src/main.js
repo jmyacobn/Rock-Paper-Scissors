@@ -44,7 +44,7 @@ function playGame(target) {
   hide(classicFighters);
   hide(deluxeFighters);
   updateStats();
-  setTimeout(startNewGame, 2000);
+  // setTimeout(startNewGame, 2000);
 }
 
 function displayWinner() {
