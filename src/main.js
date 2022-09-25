@@ -24,9 +24,9 @@ for (var i = 0; i < fighterChoices.length; i++) {
 changeGameButton.addEventListener("click", chooseGameType);
 
 // ~~~~~~~ Functions and Event Listeners ~~~~~~~
-function displayFighters(event) {
-  if (event.target === classicRules) {
-    this.currentGame.selectGame("classic");
+function displayFighters() {
+  if (event.target.classList.contains("classic-rules") || event.target.parentElement.classList.contains("classic-rules")) {
+    currentGame.selectGame("classic");
     hide(gameRulesDisplay);
     show(selectFighterDisplay);
   } else {
