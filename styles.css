@@ -34,6 +34,17 @@ img {
   margin: 40px 20px 20px 20px;
 }
 
+.change-game {
+  background: #c2cae2;
+  border: none;
+  width: 12vw;
+  height: 6vh;
+  color: #623A2B;
+  border-radius: 5%;
+  margin-top: 50%;
+  font-size: 1.2em;
+}
+
 .game-board {
   display: flex;
   flex-direction: column;
