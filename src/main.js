@@ -25,14 +25,16 @@ changeGameButton.addEventListener("click", chooseGameType);
 
 // ~~~~~~~ Functions and Event Handlers ~~~~~~~
 function displayFighters() {
+  hide(gameRulesDisplay);
+  show(selectFighterDisplay);
+  show(classicFighters);
+  hide(resultsDisplay);
   if (event.target.classList.contains("classic-rules") || event.target.parentElement.classList.contains("classic-rules")) {
     currentGame.selectGame("classic");
-    hide(gameRulesDisplay);
-    show(selectFighterDisplay);
+    gameBoardHeader.innerText = `Choose your fighter!`
   } else {
     currentGame.selectGame("deluxe");
-    hide(gameRulesDisplay);
-    show(selectFighterDisplay);
+    gameBoardHeader.innerText = `Choose your fighter!`
     show(deluxeFighters);
   };
 };
@@ -44,7 +46,7 @@ function playGame(target) {
   displayWinner();
   updateStats();
   if (currentGame.human.wins < 7 && currentGame.computer.wins < 7) {
-    setTimeout(startNewGame, 2000);
+    setTimeout(startNewRound, 2000);
   } else {
     setTimeout(resetScoreBoard, 2000);
     setTimeout(updateStats, 2000);
@@ -71,7 +73,7 @@ function updateStats() {
   computerStats.innerText = `Wins: ${currentGame.computer.wins}`;
 };
 
-function startNewGame () {
+function startNewRound () {
   currentGame.resetGameBoard();
   gameBoardHeader.innerText = `Choose your fighter!`;
     if (currentGame.gameSelection === "classic") {
@@ -96,7 +98,6 @@ function showGameFighters() {
 function chooseGameType() {
   show(gameRulesDisplay);
   hide(selectFighterDisplay);
-  hide(deluxeFighters);
   hide(changeGameButton);
 };
 
@@ -104,6 +105,7 @@ function resetScoreBoard() {
   currentGame.human.resetWins(currentGame);
   currentGame.computer.resetWins(currentGame);
 };
+
 // ~~~~~~~ Helper Functions ~~~~~~~
 function hide(element) {
   element.classList.add("hidden")
