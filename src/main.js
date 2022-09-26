@@ -107,9 +107,9 @@ function resetScoreBoard() {
 
 // ~~~~~~~ Helper Functions ~~~~~~~
 function hide(element) {
-  element.classList.add("hidden")
+  element.classList.add("hidden");
 };
 
 function show(element) {
-  element.classList.remove("hidden")
+  element.classList.remove("hidden");
 };
