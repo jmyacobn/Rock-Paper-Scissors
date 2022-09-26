@@ -23,7 +23,7 @@ for (var i = 0; i < fighterChoices.length; i++) {
 };
 changeGameButton.addEventListener("click", chooseGameType);
 
-// ~~~~~~~ Functions and Event Listeners ~~~~~~~
+// ~~~~~~~ Functions and Event Handlers ~~~~~~~
 function displayFighters() {
   if (event.target.classList.contains("classic-rules") || event.target.parentElement.classList.contains("classic-rules")) {
     currentGame.selectGame("classic");

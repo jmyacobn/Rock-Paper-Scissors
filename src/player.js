@@ -17,4 +17,8 @@ class Player {
       game.gameBoard.push(selection);
     };
   };
+
+  resetWins() {
+    this.wins = 0;
+  };
 };
