@@ -36,13 +36,14 @@ img {
   width: 25vh;
 }
 
-img:hover {
-  cursor: pointer;
-  height: 30vh;
-  width: 30vh;
+/* ~~~~~~~ Choose Game View ~~~~~~~ */
+.game-board {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 70vw;
 }
 
-/* ~~~~~~~ Choose Game View ~~~~~~~ */
 .game-rules {
   display: flex;
   flex-direction: column;
@@ -53,11 +54,6 @@ img:hover {
 
 .classic-rules, .deluxe-rules {
   background: #8090c2;
-}
-
-.classic-rules:hover, .deluxe-rules:hover {
-  background: #c2cae2;
-  cursor: pointer;
 }
 
 /* ~~~~~~~ Play Game View ~~~~~~~ */
@@ -88,14 +84,19 @@ img:hover {
   font-size: 1.2em;
   height: 6vh;
   margin-top: 50%;
-  width: 12vw;  
+  width: 12vw;
 }
 
-.game-board {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  width: 70vw;
+/* ~~~~~~~ Hidden and Hover Classes ~~~~~~~ */
+img:hover {
+  cursor: pointer;
+  height: 30vh;
+  width: 30vh;
+}
+
+.classic-rules:hover, .deluxe-rules:hover {
+  background: #c2cae2;
+  cursor: pointer;
 }
 
 .hidden {
