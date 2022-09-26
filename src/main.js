@@ -43,9 +43,13 @@ function playGame(target) {
   currentGame.computer.takeTurn(currentGame);
   displayWinner();
   updateStats();
-  hide(classicFighters);
-  hide(deluxeFighters);
-  setTimeout(startNewGame, 2000);
+  if (currentGame.human.wins < 7 && currentGame.computer.wins < 7) {
+    setTimeout(startNewGame, 2000);
+  } else {
+    setTimeout(resetScoreBoard, 2000);
+    setTimeout(updateStats, 2000);
+    setTimeout(chooseGameType, 2000);
+  };
 };
 
 function displayWinner() {
@@ -57,12 +61,9 @@ function displayWinner() {
     } else {
       gameBoardHeader.innerText = `${winner.token} ${winner.name} won this round! ${winner.token}`
     };
-    resultsDisplay.innerHTML = "";
-    resultsDisplay.innerHTML += `
-      <img class="fighter-selection" id=${currentGame.human.fighter} src="assets/${currentGame.human.fighter}.jpg" alt = ${currentGame.human.fighter} />
-      <img class="fighter-selection" id=${currentGame.computer.fighter} src="assets/${currentGame.computer.fighter}.jpg" alt="${currentGame.computer.fighter}" />`;
-    show(resultsDisplay);
-    show(changeGameButton);
+    showGameFighters()
+    hide(classicFighters);
+    hide(deluxeFighters);
 };
 
 function updateStats() {
@@ -83,6 +84,15 @@ function startNewGame () {
     };
 };
 
+function showGameFighters() {
+  resultsDisplay.innerHTML = "";
+  resultsDisplay.innerHTML += `
+    <img class="fighter-selection" id=${currentGame.human.fighter} src="assets/${currentGame.human.fighter}.jpg" alt = ${currentGame.human.fighter} />
+    <img class="fighter-selection" id=${currentGame.computer.fighter} src="assets/${currentGame.computer.fighter}.jpg" alt="${currentGame.computer.fighter}" />`;
+    show(resultsDisplay);
+    show(changeGameButton);
+};
+
 function chooseGameType() {
   show(gameRulesDisplay);
   hide(selectFighterDisplay);
@@ -90,6 +100,10 @@ function chooseGameType() {
   hide(changeGameButton);
 };
 
+function resetScoreBoard() {
+  currentGame.human.resetWins(currentGame);
+  currentGame.computer.resetWins(currentGame);
+};
 // ~~~~~~~ Helper Functions ~~~~~~~
 function hide(element) {
   element.classList.add("hidden")
