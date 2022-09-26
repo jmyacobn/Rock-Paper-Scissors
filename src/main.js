@@ -45,12 +45,12 @@ function playGame(target) {
   currentGame.computer.takeTurn(currentGame);
   displayWinner();
   updateStats();
-  if (currentGame.human.wins < 5 && currentGame.computer.wins < 5) {
+  if (currentGame.human.wins < 7 && currentGame.computer.wins < 7) {
     setTimeout(startNewRound, 2000);
   } else {
     setTimeout(resetScoreBoard, 2000);
     setTimeout(updateStats, 2000);
-    setTimeout(startNewGame, 2000);
+    setTimeout(chooseGameType, 2000);
   };
 };
 
@@ -98,7 +98,6 @@ function showGameFighters() {
 function chooseGameType() {
   show(gameRulesDisplay);
   hide(selectFighterDisplay);
-  hide(deluxeFighters);
   hide(changeGameButton);
 };
 
@@ -106,13 +105,6 @@ function resetScoreBoard() {
   currentGame.human.resetWins(currentGame);
   currentGame.computer.resetWins(currentGame);
 };
-
-function startNewGame() {
-  show(gameRulesDisplay);
-  hide(resultsDisplay);
-  hide(changeGameButton);
-  hide(selectFighterDisplay);
-}
 
 // ~~~~~~~ Helper Functions ~~~~~~~
 function hide(element) {
