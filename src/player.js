@@ -18,7 +18,7 @@ class Player {
     };
   };
 
-  resetWins() {
+  resetWins(game) {
     this.wins = 0;
   };
 };
