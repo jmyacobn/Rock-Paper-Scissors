@@ -36,10 +36,12 @@ Jennifer Yacoubian ([GitHub](https://github.com/jmyacobn), [LinkedIn](https://ww
 - JavaScript
 - Github
 
-### Wins:
+### Wins and Challenges:
+My greatest win was building a game that was completely playable in the console prior to updating the DOM! All of the game logic exists exclusively in the data model. Throughout this inning, I have grappled with the concept of the data model vs. the DOM, and with each project, I progressed in my understanding, but this one really solidified for me what it means to have DOM manipulation rely on the data model. Event propagtion is another concept with which I have been grappling during this inning, and this project helped me to solidify my understanding as I worked independently to make sense of it and recognize when I need to use it.
 
-
-### Challenges:
-
+My greatest challenge was adding the extension of the game reset after one player reaches seven wins. I thought it would be as easy as adding in a simple conditional. While that was the case, what I did not anticipate was having to change some of my other pieces of code and breaking up some of my other funcitons and event handlers into two smaller ones. I also had to make some adjustments to styling. Another challenge that I encountered was how to display the selected fighters on the DOM without many lines of code. I eventually accomplished this by ensuring the file name matched the name of the fighter choices and id name for the images, so I was able to create dynamic code for this in lines 90-92 of my main.js; however, I would like to see others' apporaches this.
 
 ### Future Features:
+- Add local storage so that both player and computer wins are stored locally and persist upon page refresh
+- Add a celebration page with a final scoreboard when a player reaches seven wins before the game resets
+- Create a way for the player to choose their own icon or token instead of the default
