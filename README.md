@@ -11,7 +11,7 @@ Using HTML, CSS, and JavaScript, I built a fully playable web-based Rock, Paper,
 - In the terminal, run the command `open index.html` for initial deployment and interaction with app.
 
 ### Preview of App:
-![Video](https://www.loom.com/share/e1233ac894af477c9a630d529159a9a8)
+[Click here for preview of app!](https://www.loom.com/share/e1233ac894af477c9a630d529159a9a8)
 
 You can play Rock, Paper, Scissors: Elements of Nature [here]().
 
