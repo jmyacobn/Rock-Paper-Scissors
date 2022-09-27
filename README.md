@@ -2,7 +2,7 @@
 # Rock-Paper-Scissors: Elements of Nature
 
 ### Abstract:
-Using HTML, CSS, and JavaScript, I built a fully playable web-based Rock, Paper, Scissors game from scratch! I built the game so that one person can play against the computer, and I built it to reset after seven rounds. You can play the classic version with three fighter choices, or the deluxe game, which includes five fighter choices, and even toggle between the class and deluxe. Instead of rock, paper, scissors, I chose an Elements of Nature theme that includes earth, water, fire, wind, and my adorable cat, Otis!
+Using HTML, CSS, and JavaScript, I built a fully playable web-based Rock, Paper, Scissors game from scratch! I built the game so that one person can play against the computer, and I built it to reset after seven rounds. You can play the classic version with three fighter choices, or the deluxe game, which includes five fighter choices, and even toggle between the classic and deluxe. Instead of rock, paper, scissors, I chose an Elements of Nature theme that includes earth, water, fire, wind, and my adorable cat, Otis!
 
 ### Installation Instructions:
 - Clone [this repo](https://github.com/jmyacobn/Rock-Paper-Scissors) to your local computer.
