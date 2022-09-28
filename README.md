@@ -13,7 +13,7 @@ Using HTML, CSS, and JavaScript, I built a fully playable web-based Rock, Paper,
 ### Preview of App:
 [Video preview of app!](https://www.loom.com/share/e1233ac894af477c9a630d529159a9a8)
 
-You can play Rock, Paper, Scissors: Elements of Nature [here]().
+You can play Rock, Paper, Scissors: Elements of Nature [here](https://jmyacobn.github.io/Rock-Paper-Scissors/).
 
 ### Context:
 Rock-Paper-Scissors was completed during our fifth week at Turing and served as the final capstone project for Mod 1. We were given a full week to complete this project while balancing classes, professional development, other assignments, and our final assessment. The spec for this project can be found [here](https://frontend.turing.edu/projects/module-1/rock-paper-scissors-solo-v2.html).
