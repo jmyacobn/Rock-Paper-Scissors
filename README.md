@@ -45,3 +45,4 @@ My greatest challenge was adding the extension of the game reset after one playe
 - Add local storage so that both player and computer wins are stored locally and persist upon page refresh
 - Add a celebration page with a final scoreboard when a player reaches seven wins before the game resets
 - Create a way for the player to choose their own icon or token instead of the default
+- Add sound effects
